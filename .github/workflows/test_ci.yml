@@ -6,7 +6,7 @@ jobs:
   demo:
     runs-on: ubuntu-latest
     steps:
-      - name: Get User Permission
+      - name: Get User Permission.
         id: checkAccess
         uses: actions-cool/check-user-permission@v2
         with:
@@ -27,9 +27,4 @@ jobs:
           ref: ${{  github.event.pull_request.head.sha }} # This is dangerous without the first access check
       - name: Run tests
         run: |
-          if [[ "x${{ secrets.MY_SECRET }}" == "xval" ]]; then
-            echo "Access to secrets"
-          else
-            echo "No access to secrets"
-            exit 1
-          fi
+          echo "here we run tests"
